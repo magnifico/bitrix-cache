@@ -1,0 +1,10 @@
+---
+
+stages:
+    - tests
+
+run_tests:
+    stage: tests
+    script:
+        - "docker-compose build && docker-compose run phpunit"
+        - "docker-compose kill && docker-compose rm --force"
